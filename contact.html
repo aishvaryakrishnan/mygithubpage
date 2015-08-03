@@ -2,14 +2,13 @@
 function sendMail(){
         var body = "Name: "+ document.getElementById('name').value +" \n Email:" + document.getElementById('email').value +" \n Telephone: " + document.getElementById('phone').value +" \n Message:" + document.getElementById('message').value ;
       var mail = "mailto:aishvarya.krishnan@gatech.edu?subject=" + escape(document.getElementById('subject').value) +"&body="+encodeURIComponent(body);
-    //  alert(mail);
       window.location.href = mail;
 }
 </script>
 <div class="container marketing">
                 <div class="col-xs-12" style="height:100px;"></div>
 <form id="contact-form" action="javascript:sendMail();" method="post">
-        <h3>Send an e-mail to me</h3>
+        <h3>Send an e-mail using following form or you can reach me at aishvarya.krishnan@gatech.edu</h3>
         <div>
                 <label>
                         <span>Name: (required)</span>
