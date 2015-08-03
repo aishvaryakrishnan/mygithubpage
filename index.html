@@ -344,10 +344,10 @@ ul {
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="#">Newsfeed</a></li>
                 <li><a href="#about">Portfolio</a></li>
 		<li><a href="#resume">Resume</a></li>
 		<li><a href="#gallery">Gallery</a></li>
+    <li class="active"><a href="#blog">Blog</a></li>
   </ul>
    <ul class="nav pull-right">
     <a href="https://github.com/aishvaryakrishnan">
@@ -379,7 +379,6 @@ ul {
             <div class="carousel-caption">
               <h1>Recent Activity</h1>
               <p class="lead">@InternHacks</p>
-              <a class="btn btn-large btn-primary" href="#">Pictures</a>
             </div>
           </div>
         </div>
@@ -388,8 +387,8 @@ ul {
           <div class="container">
             <div class="carousel-caption">
               <h1>Watch out for....</h1>
-              <p class="lead">Sunday @ Monterey</p>
-              <a class="btn btn-large btn-primary" href="#">Pictures</a>
+              <p class="lead">Pictures from Sunday @ Monterey</p>
+              <p class="lead">Meteor Hackathon on 08/08-08/09</p>
             </div>
           </div>
         </div>
@@ -398,6 +397,8 @@ ul {
       <a class="right carousel-control" href="#home" data-slide="next">&rsaquo;</a>
     </div><!-- /.carousel -->
 
+<div id="blog" class="panel panel-primary" style="display: none">
+  </div>
  <div id = "about" class="panel panel-primary" style="display: none">
 
 </div>
@@ -408,6 +409,8 @@ ul {
   <div id="contact" class="panel panel-primary" style="display: none">
   </div>
 
+<div id="gallery" class="panel panel-primary" style="display: none">
+  </div>
 <label id = "prev" style="display: none">#home</label>
 </div>
     <!-- Le javascript
@@ -451,6 +454,22 @@ if (status == "error") {
 });
  } else if(id == "#contact"){
   $(id).load("contact.html", function(response, status, xhr) {
+if (status == "error") {
+    var msg = "Sorry but there was an error: ";
+    $("#result").html(msg + xhr.status + " " + xhr.statusText);
+  }
+});
+ }
+ else if(id == "#gallery"){
+  $(id).load("gallery.html", function(response, status, xhr) {
+if (status == "error") {
+    var msg = "Sorry but there was an error: ";
+    $("#result").html(msg + xhr.status + " " + xhr.statusText);
+  }
+});
+ }
+ else if(id == "#blog"){
+  $(id).load("blog.html", function(response, status, xhr) {
 if (status == "error") {
     var msg = "Sorry but there was an error: ";
     $("#result").html(msg + xhr.status + " " + xhr.statusText);
