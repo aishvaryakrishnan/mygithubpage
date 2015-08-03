@@ -1,0 +1,68 @@
+<script>
+(function() {
+ 
+    // Create input element for testing
+    var input = document.createElement('input');
+     
+    // Create the supports object
+    var supports = {};
+     
+    supports.autofocus   = 'autofocus' in input;
+    supports.required    = 'required' in input;
+    supports.placeholder = 'placeholder' in input;
+ 
+    // Fallback for autofocus attribute
+    if(!supports.autofocus) {
+         
+    }
+     
+    // Fallback for required attribute
+    if(!supports.required) {
+         
+    }
+ 
+    // Fallback for placeholder attribute
+    if(!supports.placeholder) {
+         
+    }
+     
+    // Change text inside send button on submit
+    var send = document.getElementById('contact-submit');
+    if(send) {
+        send.onclick = function () {
+            this.innerHTML = '...Sending';
+        }
+    }
+ 
+})();
+</script>
+<form id="contact-form" action="/" method="post">
+        <h3>Send an e-mail to me</h3>
+        <div>
+                <label>
+                        <span>Name: (required)</span>
+                        <input placeholder="Please enter your name" type="text" tabindex="1" required autofocus>
+                </label>
+        </div>
+        <div>
+                <label>
+                        <span>Email: (required)</span>
+                        <input placeholder="Please enter your email address" type="email" tabindex="2" required>
+                </label>
+        </div>
+        <div>
+                <label>
+                        <span>Telephone: </span>
+                        <input placeholder="Please enter your number" type="tel" tabindex="3">
+                </label>
+        </div>
+        <div>
+                <label>
+                        <span>Message: (required)</span>
+                        <textarea placeholder="Include all the details you can" tabindex="5" required></textarea>
+                </label>
+        </div>
+        <div>
+                <button name="submit" type="submit" id="contact-submit">Send Email</button>
+        </div>
+</form>
