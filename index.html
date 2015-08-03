@@ -420,6 +420,7 @@ ul {
 
 $(document).ready(function(){
   $("a").click(function(){
+     $this.addClass('active');
   var id=$(this).attr('href');
   var value=$(id).text();
   $(".target").text(value);
