@@ -440,6 +440,13 @@ if (status == "error") {
     $("#result").html(msg + xhr.status + " " + xhr.statusText);
   }
 });
+ } else if(id == "#contact"){
+  $(id).load("contact.html", function(response, status, xhr) {
+if (status == "error") {
+    var msg = "Sorry but there was an error: ";
+    $("#result").html(msg + xhr.status + " " + xhr.statusText);
+  }
+});
  }
   });
 });
