@@ -1,47 +1,46 @@
 <script>
-(function() {
-    var input = document.createElement('input');
-     
-    // Change text inside send button on submit
-    var send = document.getElementById('contact-submit');
-    if(send) {
-        send.onclick = function () {
-            this.innerHTML = '...Sending';
-        }
-    }
- 
-})();
+function sendMail(){
+        var body = "Name: "+ document.getElementById('name').value +" \n Email:" + document.getElementById('email').value +" \n Telephone: " + document.getElementById('phone').value +" \n Message:" + document.getElementById('message').value ;
+      var mail = "mailto:aishvarya.krishnan@gatech.edu?subject=" + escape(document.getElementById('subject').value) +"&body="+encodeURIComponent(body);
+      window.location.href = mail;
+}
 </script>
 <div class="container marketing">
                 <div class="col-xs-12" style="height:100px;"></div>
-<form id="contact-form" action="mailto:aishvarya.krishnan@gatech.edu" method="post">
+<form id="contact-form" action="sendMail(); return false" method="post">
         <h3>Send an e-mail to me</h3>
         <div>
                 <label>
                         <span>Name: (required)</span>
-                        <input placeholder="Please enter your name" type="text" tabindex="1" required autofocus>
+                        <input id ="name" placeholder="Please enter your name" type="text" tabindex="1" required autofocus>
                 </label>
         </div>
         <div>
                 <label>
                         <span>Email: (required)</span>
-                        <input placeholder="Please enter your email address" type="email" tabindex="2" required>
+                        <input id ="email" placeholder="Please enter your email address" type="email" tabindex="2" required>
                 </label>
         </div>
         <div>
                 <label>
                         <span>Telephone: </span>
-                        <input placeholder="Please enter your number" type="tel" tabindex="3">
+                        <input id ="phone" placeholder="Please enter your number" type="tel" tabindex="3">
+                </label>
+        </div>
+        <div>
+                <label>
+                        <span>Subject: (required)</span>
+                        <textarea id ="subject" placeholder="Include subject" tabindex="4" required></textarea>
                 </label>
         </div>
         <div>
                 <label>
                         <span>Message: (required)</span>
-                        <textarea placeholder="Include the message/comments" tabindex="5" required></textarea>
+                        <textarea id ="message" placeholder="Include message/comments" tabindex="5" required></textarea>
                 </label>
         </div>
         <div>
-                <button name="submit" type="submit" id="contact-submit">Send Email</button>
+                <button name="submit" type="submit" id="submit">Send Email</button>
         </div>
 </form>
 </div>
