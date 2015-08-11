@@ -49,7 +49,7 @@ $(document).ready(function(){
          
 $(document).on('click', 'a.controls', function(){
 	var index = $(this).attr('href');
-	var src = $('div#images:nth-child('+ index +') img').attr('src');             
+	var src = $('#images > :nth-child('+ index +') img').attr('src');             
 	
 	$('.modal-body img').attr('src', src);
 	
@@ -64,7 +64,8 @@ $(document).on('click', 'a.controls', function(){
 		$('a.previous').attr('href', newPrevIndex);
 	}
 	
-	var total = $('div#images').length + 1; 
+	var total = $('#images').length + 1; 
+	console.log('total='+total);
 	//hide next button
 	if(total === newNextIndex){
 		$('a.next').hide();
