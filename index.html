@@ -88,14 +88,14 @@
     }
 
     .carousel .item {
-      height: 450px;
+      height: 400px;
     }
     .carousel img {
       position: absolute;
       top: 0;
       left: 0;
       min-width: 100%;
-      height: 450px;
+      height: 400px;
     }
 
     .carousel-caption {
@@ -179,11 +179,11 @@
       }
 
       .carousel .item {
-        height: 450px;
+        height: 400px;
       }
       .carousel img {
         width: auto;
-        height: 450px;
+        height: 400px;
       }
 
       .featurette {
@@ -297,10 +297,10 @@ ul {
 
       }
       .carousel .item {
-        height: 300px;
+        height: 200px;
       }
       .carousel img {
-        height: 300px;
+        height: 200px;
       }
       .carousel-caption {
         width: 65%;
@@ -328,6 +328,15 @@ ul {
       }
 
     }
+  .overlay { 
+  color:#fff;
+  position:absolute;
+  z-index:12;
+  top:200px;
+  left:0;
+  width:100%;
+  text-align:center;
+  }
     </style>
 
     <!-- Fav and touch icons -->
@@ -356,7 +365,6 @@ ul {
             <a class="brand" href="#home">Aishvarya Krishnan</a>
             <div class="nav-collapse collapse">
               <ul class="nav navbar-nav navbar-left">
-                <li><a href="#about">Portfolio</a></li>
 		<li><a href="#resume">Resume</a></li>
 		<li><a href="#gallery">Gallery</a></li>
     <li><a href="#blog">Blog</a></li>
@@ -384,40 +392,74 @@ ul {
     <!-- Carousel
     ================================================== -->
     <div id ="home">
-    <div id= "carousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="img/be-positive.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Recent Activity</h1>
-              <p class="lead">Started working on my first portfolio website General Assembly @InternHacks</p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/beach.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Stay tuned for....</h1>
-              <p class="lead">Pictures from Sunday @ Monterey</p>
-              <p class="lead">My experience @ Meteor Hackathon on 08/08-08/09</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#home" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#home" data-slide="next">&rsaquo;</a>
-    </div><!-- /.carousel -->
-     <div class="main-text hidden-xs">
+    <div class="overlay">
                 <div class="col-md-12 text-center">
                     <h1>
-                        Aishvarya Krishnan's world.</h1>
+                        Welcome to my world.</h1>
                     <h3>
                         This is an online compilation of my thoughts, work and accomplishments.
                     </h3>
                 </div>
     </div>
+    <div id= "carousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/code.jpg" alt="">
+        </div>
+      </div>
+    </div><!-- /.carousel -->
+
+<div class="container marketing">
+
+      <!-- START THE FEATURETTES -->
+  <div class="panel panel-default">
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+         <div class="span4 pull-right">
+          <img class="img-circle" src="img/pic.png">
+          <h2>Graduate Student @ <span class="muted"> Georgia Tech </span></h2>
+        </div><!-- /.span4 -->
+        <h2 class="featurette-heading">Li'l about me..</h2>
+        <p class="lead"> Hey there! </p>
+        <p class="lead">I am a graduate student at Georgia Tech pursuing MS
+              in Computer Science, specializing Machine Learning. My
+              main areas of interest are: Data
+              Science, Web App development and Mobile App development. I enjoy solving complex and real-world problems in machine learning, big data, and software engineering. For more information about my work, check out the Resume section on my website, or my <a href="https://www.linkedin.com/in/aishvaryakrishnan">LinkedIn profile</a></p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <div class="span4 pull-right">
+          <img src="img/now.png">
+          <h2><span class="muted">ServiceNow, Inc. </span></h2>
+        </div><!-- /.span4 -->
+        <h2 class="featurette-heading">Summer Internship <span class="muted">2015</span></h2>
+        <p class="lead">In my current role as Software Engineering Intern at ServiceNow Inc., I am developing an end-to-end application leveraging the ServiceNow platform that enables efficient management of customer clones using automation. This application is aimed at making the process of managing the clones and handling customer clone requests seamless as compared to the existing static implementation.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <div class="span4 pull-right">
+          <img class="img-circle pull-right" src="http://www.charlottehappening.com/wp-content/uploads/2011/01/CapGemini.jpg">
+          <h2><span class="muted">Capgemini India Pvt. Ltd. </span></h2>
+        </div><!-- /.span4 -->
+        <h2 class="featurette-heading">Senior Software Engineer <span class="muted">2012-2014</span></h2>
+        <p class="lead">I implemented two large-scale web-based applications in the Java domain. The application for "Internal Security and Compliance Management" was developed using Java ServerFaces and Spring MVC Architecture focusing on the protection and management of data. The other assignment based on SmartGWT technology was developed for the commercial aviation domain, to manage large amounts of data for tens of thousands of users and efficiently handle file synchronization on a NAS system. This project was developed on Agile Methodology, which involved direct client interaction and live code discussions.</p>
+      </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+</div>
+</div>
+
+
 </div>
 <div id="blog" class="panel panel-primary" style="display: none"></div>
  <div id = "about" class="panel panel-primary" style="display: none"></div>
@@ -459,14 +501,7 @@ $(prevVal).toggle();
   $( id ).toggle();
  }
 $("#prev").text(id);
- if(id == "#about"){
-   $(id).load("portfolio.html", function(response, status, xhr) {
-if (status == "error") {
-    var msg = "Sorry but there was an error: ";
-    $("#result").html(msg + xhr.status + " " + xhr.statusText);
-  }
-});
- } else if(id == "#resume"){
+if(id == "#resume"){
   $(id).load("resume.html", function(response, status, xhr) {
 if (status == "error") {
     var msg = "Sorry but there was an error: ";
