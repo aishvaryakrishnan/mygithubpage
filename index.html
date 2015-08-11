@@ -9,7 +9,6 @@
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/bootstrap-social.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <style>
 
     /* GLOBAL STYLES
@@ -256,6 +255,7 @@ ul {
   padding-right: 35px;
 }
 .footer {
+  display: block;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -266,6 +266,7 @@ ul {
   border-color: #252525;
   padding-left: 20px;
   padding-right: 10px;
+  padding-top: 10px;
   margin-top: 20px;
   margin-bottom: 10px;
   font-weight: bold;
@@ -329,7 +330,7 @@ ul {
 
   <body>
 
-
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
     <!-- NAVBAR
     ================================================== -->
@@ -398,7 +399,29 @@ ul {
       <a class="left carousel-control" href="#home" data-slide="prev">&lsaquo;</a>
       <a class="right carousel-control" href="#home" data-slide="next">&rsaquo;</a>
     </div><!-- /.carousel -->
+<div class="container marketing">
 
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
 <div id="blog" class="panel panel-primary" style="display: none"></div>
  <div id = "about" class="panel panel-primary" style="display: none"></div>
 
@@ -409,9 +432,11 @@ ul {
 <div id="gallery" class="panel panel-primary" style="display: none"></div>
 <label id = "prev" style="display: none">#home</label>
 </div>
+<div class = navbar-fixed-bottom>
 <footer class="footer">
   <p>"Excellence is a continuous process and not an accident." -A. P. J. Abdul Kalam</p>
 </footer>
+</div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
