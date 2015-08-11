@@ -63,15 +63,14 @@ $(document).on('click', 'a.controls', function(){
 		$(this).attr('href', newNextIndex); 
 		$('a.previous').attr('href', newPrevIndex);
 	}
-	
 	var total = $('#images > img').length + 1; 
-	console.log('total='+total);
 	//hide next button
 	if(total === newNextIndex){
 		$('a.next').hide();
 	}else{
 		$('a.next').show()
 	}            
+	console.log('newPrevIndex='+newPrevIndex);
 	//hide previous button
 	if(newPrevIndex === 0){
 		$('a.previous').hide();
