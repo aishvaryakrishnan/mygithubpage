@@ -3,8 +3,8 @@
  <div id="images" class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
         <img class="img-responsive" src="img/main.png" alt="Me" style="width:150px;height:150px">
         <img class="img-responsive" src="img/cover.png" alt="Love life @gatech" style="width:150px;height:150px">
-        <img class="img-responsive" src="img/comp.png" alt="Design" style="width:150px;height:150px">
-        <img class="img-responsive" src="img/bike.png" alt="Aventures" style="width:150px;height:150px" >
+        <img class="img-responsive" src="img/beautiful.png" alt="Design" style="width:150px;height:150px">
+        <img class="img-responsive" src="https://scontent.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11822809_977242938994877_3529901364360831296_n.jpg?oh=82a8454819f0cccff4113f8f7772c7af&oe=564A716E" alt="Aventures" style="width:150px;height:150px" >
   </div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -22,11 +22,11 @@ $(document).ready(function(){
 		var src = $(this).attr('src');
 		var img = '<img src="' + src + '" class="img-responsive"/>';
 		var index = $(this).index();   
-		console.log(index +" " +(index+1));
+		console.log(index +" " +(index+2));
 		var html = '';
 		html += img;                
 		html += '<div style="height:25px;clear:both;display:block;">';
-		html += '<a class="controls next" href="'+ (index+1) + '">next &raquo;</a>';
+		html += '<a class="controls next" href="'+ (index+2) + '">next &raquo;</a>';
 		html += '<a class="controls previous" href="' + (index) + '">&laquo; prev</a>';
 		html += '</div>';
 		
@@ -72,7 +72,7 @@ $(document).on('click', 'a.controls', function(){
 	}            
 	console.log('newPrevIndex='+newPrevIndex);
 	//hide previous button
-	if(newPrevIndex === -1){
+	if(newPrevIndex === 0){
 		$('a.previous').hide();
 	}else{
 		$('a.previous').show()
