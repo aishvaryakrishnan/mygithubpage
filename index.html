@@ -62,7 +62,19 @@
       margin-top: 10px;
     }
 
+    .home {
+      margin-bottom: 30px;
+      position: relative;
+      height: 400px;
+    }
 
+    .home img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 400px;
+    }
 
     /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
@@ -178,6 +190,10 @@
         margin: -20px 0;
       }
 
+      .home img {
+        width: auto;
+        height: 400px;
+      }
       .carousel .item {
         height: 400px;
       }
@@ -330,11 +346,12 @@ ul {
     }
   .overlay { 
   color:#fff;
-  position:absolute;
-  z-index:12;
-  top:270px;
-  left:0;
-  width:100%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 9;
+  max-width: 100%;
+  padding: 0 150px;
+  margin-top: 270px;
   text-align:center;
   }
     </style>
@@ -389,23 +406,19 @@ ul {
 
   
 
-    <!-- Carousel
+    <!-- Home background
     ================================================== -->
     <div id ="home">
-    <div class="overlay">
-                <div class="col-md-12 text-center">
+    <div id= "carousel" class="home">
+            <img src="img/code.jpg" alt="">
+            <div class="container">
+            <div class="overlay">
                     <h1>
                         Welcome to my world.</h1>
                     <h3>
                         This is an online compilation of my thoughts, work and accomplishments.
                     </h3>
                 </div>
-    </div>
-    <div id= "carousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="img/code.jpg" alt="">
-        </div>
       </div>
     </div><!-- /.carousel -->
 
