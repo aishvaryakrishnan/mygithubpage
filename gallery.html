@@ -72,7 +72,7 @@ $(document).on('click', 'a.controls', function(){
 	}            
 	console.log('newPrevIndex='+newPrevIndex);
 	//hide previous button
-	if(newPrevIndex === 0){
+	if(newPrevIndex === -1){
 		$('a.previous').hide();
 	}else{
 		$('a.previous').show()
