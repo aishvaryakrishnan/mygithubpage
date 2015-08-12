@@ -39,7 +39,7 @@
 $(document).ready(function(){
 	var i = 0;
 	for(i = 0; i < $('#images > img').length;i++){
-		var src = $('#images > :nth-child('+ i +')').attr('src'); 
+		var src = $('#images > :nth-child('+ i+1 +')').attr('src');
 		$('#carousel_imgs').append('<div class="item"><img src="'+src+'"></div>');
 	}        
 	$('img').on('click',function(){
