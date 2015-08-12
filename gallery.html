@@ -1,4 +1,5 @@
-<div style="margin-top:100px;margin-left:200px;margin-right:200px">
+<link href="css/bootstrap.css" rel="stylesheet">
+<div style="margin-top:100px;">
 <div id="carousel" class="carousel slide" data-ride="carousel">
 
   <!-- Wrapper for slides -->
@@ -42,7 +43,7 @@ $(document).ready(function(){
 		var src = $('#images > :nth-child('+ (i+1) +')').attr('src');
 		console.log("src="+src+" ...i="+i);
 		if(i == 0){
-			$('#carousel_imgs').append('<div class="item active"><img src="'+src+'"></div>');
+			$('#carousel_imgs').append('<div class="item active"><img class="img-responsive center-block" src="'+src+'"></div>');
 		} else{
 		$('#carousel_imgs').append('<div class="item"><img src="'+src+'"></div>');
 		}
