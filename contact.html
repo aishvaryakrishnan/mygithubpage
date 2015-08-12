@@ -1,41 +1,40 @@
-<script>
-function sendMail(){
-        var body = "Name: "+ document.getElementById('name').value +" \n Email:" + document.getElementById('email').value +" \n Telephone: " + document.getElementById('phone').value +" \n Message:" + document.getElementById('message').value ;
-      var mail = "mailto:aishvarya.krishnan@gatech.edu?subject=" + escape(document.getElementById('subject').value) +"&body="+encodeURIComponent(body);
-      window.location.href = mail;
+<style type="text/css">
+required {
+    color: red;
+    font-weight: bold;
 }
-</script>
+</style>
 <div class="container marketing">
                 <div class="col-xs-12" style="height:100px;"></div>
 <form id="contact-form" action="javascript:sendMail();" method="post">
         <p class="lead">Send an e-mail using following form or you can reach me at aishvarya.krishnan@gatech.edu</p>
         <div>
                 <label>
-                        <span>Name: (required)</span>
-                        <input id ="name" placeholder="Please enter your name" type="text" tabindex="1" required autofocus>
+                        <span>Name: <required>*</required></span>
+                        <input style="width:20em;" id ="name" placeholder="Enter your name" type="text" tabindex="1"  required autofocus>
                 </label>
         </div>
         <div>
                 <label>
-                        <span>Email: (required)</span>
-                        <input id ="email" placeholder="Please enter your email address" type="email" tabindex="2" required>
+                        <span>Email: <required>*</required></span>
+                        <input style="width:20em;" id ="email" placeholder="Enter your email address" type="email" tabindex="2" required>
                 </label>
         </div>
         <div>
                 <label>
                         <span>Telephone: </span>
-                        <input id ="phone" placeholder="Please enter your number" type="tel" tabindex="3">
+                        <input style="width:10em;" id ="phone" placeholder="Enter your number" type="tel" tabindex="3">
                 </label>
         </div>
         <div>
                 <label>
-                        <span>Subject: (required)</span>
-                        <textarea id ="subject" placeholder="Include subject" tabindex="4" required></textarea>
+                        <span>Subject: <required>*</required></span>
+                        <input id ="subject" placeholder="Include subject" tabindex="4" required></input>
                 </label>
         </div>
         <div>
                 <label>
-                        <span>Message: (required)</span>
+                        <span>Message: <required>*</required></span>
                         <textarea id ="message" placeholder="Include message/comments" tabindex="5" required></textarea>
                 </label>
         </div>
@@ -44,3 +43,10 @@ function sendMail(){
         </div>
 </form>
 </div>
+<script>
+function sendMail(){
+        var body = "Name: "+ document.getElementById('name').value +" \n Email:" + document.getElementById('email').value +" \n Telephone: " + document.getElementById('phone').value +" \n Message:" + document.getElementById('message').value ;
+      var mail = "mailto:aishvarya.krishnan@gatech.edu?subject=" + escape(document.getElementById('subject').value) +"&body="+encodeURIComponent(body);
+      window.location.href = mail;
+}
+</script>
