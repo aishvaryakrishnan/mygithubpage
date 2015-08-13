@@ -37,8 +37,8 @@ $(document).ready(function(){
 		var html = '';
 		html += img;                
 		html += '<div style="height:25px;clear:both;display:block;">';
-		html += '<a class="controls next" href="'+ (index+2) + '">next &raquo;</a>';
-		html += '<a class="controls previous" href="' + (index) + '">&laquo; prev</a>';
+		html += '<a class="controls next" href="'+ (index+1) + '">next &raquo;</a>';
+		html += '<a class="controls previous" href="' + (index-1) + '">&laquo; prev</a>';
 		html += '</div>';
 		
 		$('#myModal').modal();
@@ -79,7 +79,7 @@ $(document).on('click', 'a.controls', function(){
 	}            
 	console.log('newPrevIndex='+newPrevIndex);
 	//hide previous button
-	if(newPrevIndex === 0){
+	if(newPrevIndex === -1){
 		$('a.previous').hide();
 	}else{
 		$('a.previous').show()
