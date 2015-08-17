@@ -1,7 +1,7 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
 <div class="container marketing">
-
 <div class="col-xs-12" style="height:100px;"></div>  
-
 <div id="images" class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="float: left; width: 50%;">
         <img class="img-responsive" src="https://scontent.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/10801898_10204315799991634_8640830247300686960_n.jpg?oh=c2c098e103664a07d8d025bb7b10e2e2&oe=564C7B03" alt="Me" style="width:150px;height:auto">
         <img class="img-responsive" src="img/winners.png" alt="Me" style="width:150px;height:auto">
@@ -34,6 +34,12 @@
  </div>
 
 <script type="text/javascript">
+!function ($) {
+        $(function(){
+          $('#carousel').carousel()
+        })
+}(window.jQuery)
+
 $(document).ready(function(){
 	var i = 0;
 	for(i = 0; i < $('#images > img').length;i++){
