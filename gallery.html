@@ -54,8 +54,8 @@ $(document).ready(function(){
 		var html = '';
 		html += img;                
 		html += '<div style="height:auto;clear:both;display:block;">';
-		html += '<a class="controls next" href="'+ (index+1) + '">next &raquo;</a>';
-		html += '<a class="controls previous" href="' + (index) + '">&laquo; prev</a>';
+		html += '<a class="controls next" href="'+ (index +1) + '">next &raquo;</a>';
+		html += '<a class="controls previous" href="' + (index -1) + '">&laquo; prev</a>';
 		html += '</div>';
 		
 		$('#myModal').modal();
@@ -73,7 +73,7 @@ $(document).ready(function(){
          
 $('#myModal .modal-body').on('click', 'a.controls', function(){
 	var index = $(this).attr('href');
-	var src = $('#images > :nth-child('+ (index +1) +')').attr('src');             
+	var src = $('#images > :nth-child('+ (index+1) +')').attr('src');             
 	
 	$('#myModal .modal-body img').attr('src', src);
 	
