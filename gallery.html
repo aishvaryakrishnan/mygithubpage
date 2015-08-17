@@ -77,8 +77,8 @@ $('#myModal').on('click', 'a.controls', function(){
 	
 	$('.modal-body img').attr('src', src);
 	
-	var newPrevIndex = parseInt(index) - 2; 
-	var newNextIndex = parseInt(index) + 2; 
+	var newPrevIndex = parseInt(index) - 1; 
+	var newNextIndex = parseInt(index) + 1; 
 	
 	if($(this).hasClass('previous')){               
 		$(this).attr('href', newPrevIndex); 
