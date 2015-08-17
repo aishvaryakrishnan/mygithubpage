@@ -1,4 +1,3 @@
-<link href = "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 <div class="container marketing">
 <div class="col-xs-12" style="height:100px;"></div>  
 <div id="images" class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="float: left; width: 50%;">
@@ -74,12 +73,12 @@ $(document).ready(function(){
          
 $('#myModal').on('click', 'a.controls', function(){
 	var index = $(this).attr('href');
-	var src = $('#images > :nth-child('+ (index +1) +')').attr('src');             
+	var src = $('#images > :nth-child('+ (index + 1) +')').attr('src');             
 	
 	$('.modal-body img').attr('src', src);
 	
-	var newPrevIndex = parseInt(index) - 1; 
-	var newNextIndex = parseInt(index) + 1; 
+	var newPrevIndex = parseInt(index) - 2; 
+	var newNextIndex = parseInt(index) + 2; 
 	
 	if($(this).hasClass('previous')){               
 		$(this).attr('href', newPrevIndex); 
