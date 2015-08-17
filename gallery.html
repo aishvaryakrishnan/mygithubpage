@@ -71,7 +71,7 @@ $(document).ready(function(){
 })
         
          
-$('#myModal').on('click', 'a.controls', function(){
+$('#myModal .modal-body').on('click', 'a.controls', function(){
 	var index = $(this).attr('href');
 	var src = $('#images > :nth-child('+ (index + 1) +')').attr('src');             
 	
