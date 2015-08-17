@@ -75,7 +75,7 @@ $('#myModal .modal-body').on('click', 'a.controls', function(){
 	var index = $(this).attr('href');
 	var src = $('#images > :nth-child('+ (index) +')').attr('src');             
 	
-	$('img').attr('src', src);
+	$('#myModal .modal-body img').attr('src', src);
 	
 	var newPrevIndex = parseInt(index) - 1; 
 	var newNextIndex = parseInt(index) + 1; 
