@@ -73,6 +73,7 @@ $(document).ready(function(){
          
 $('#myModal .modal-body').on('click', 'a.controls', function(){
 	var index = $(this).attr('href');
+	console.log("index:"+index);
 	var src = $('#images > :nth-child('+ (index+1) +')').attr('src');             
 	
 	console.log("before:"+$('#myModal .modal-body img').attr("src"));
