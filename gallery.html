@@ -1,3 +1,4 @@
+<link href = "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 <div class="container marketing">
 <div class="col-xs-12" style="height:100px;"></div>  
 <div id="images" class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="float: left; width: 50%;">
@@ -96,7 +97,7 @@ $('#myModal').on('click', 'a.controls', function(){
 	}            
 	console.log('newPrevIndex='+newPrevIndex);
 	//hide previous button
-	if(newPrevIndex === 0){
+	if(newPrevIndex === -1){
 		$('a.previous').hide();
 	}else{
 		$('a.previous').show();
