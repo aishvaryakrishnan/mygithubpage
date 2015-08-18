@@ -51,6 +51,7 @@ $(document).ready(function(){
 		var src = $(this).attr('src');
 		var img = '<img src="' + src + '" class="img-responsive"/>';
 		var index = $(this).index();   
+		console.log("index:"+index);
 		var html = '';
 		html += img;                
 		html += '<div style="height:auto;clear:both;display:block;">';
@@ -71,13 +72,13 @@ $(document).ready(function(){
 })
         
          
-$('#myModal .modal-body .controls next, .myModal .modal-body .controls previous').on('click', function(){
+$('#myModal .modal-body').on('click', 'a.controls', function(){
 	var index = $(this).attr('href');
 	console.log("index:"+index);
 	var src = $('#images > :nth-child('+ (index+1) +')').attr('src');             
 	
 	console.log("before:"+$('#myModal .modal-body img').attr("src"));
-	//$('#myModal .modal-body img').attr('src', src);
+	$('#myModal .modal-body img').attr('src', src);
 	console.log("after:"+$('#myModal .modal-body img').attr("src"));
 	var newPrevIndex = parseInt(index) - 1; 
 	var newNextIndex = parseInt(index) + 1; 
