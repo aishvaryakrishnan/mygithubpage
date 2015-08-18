@@ -8,6 +8,8 @@
         <img class="img-responsive" src="https://scontent.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11822809_977242938994877_3529901364360831296_n.jpg?oh=82a8454819f0cccff4113f8f7772c7af&oe=564A716E" alt="Aventures" style="width:150px;height:auto" >
         <img class="img-responsive" src="https://scontent.xx.fbcdn.net/hphotos-xpt1/t31.0-8/11703575_979589695426868_1583574928485370955_o.jpg" alt="Aventures" style="width:150px;height:auto" >
         <img class="img-responsive" src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11885326_10206182160045238_1255539113770201132_n.jpg?oh=188bb035c847da685255603442d96e87&oe=5683AF51" style="width:150px;height:auto">
+        <img class="img-responsive" src="https://scontent-atl1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/s720x720/11885074_817565885023486_1070297332920986903_n.jpg?oh=d466444c2672fdc910eeb91f6fdb9428&oe=5641FE1C" style="width:150px;height:auto">
+        <img class="img-responsive" src="https://scontent-atl1-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/11880431_817568705023204_553715846799654330_n.jpg?oh=d54886225bb35ba38990dc5743abc40d&oe=56423136" style="width:150px;height:auto">
 </div>
 <div id="carousel" class="carousel slide" data-ride="carousel" style="float: left; width: 50%;">
       <div id = "carousel_imgs" class="carousel-inner" role="listbox" style="height: 100%">
@@ -75,7 +77,7 @@ $(document).ready(function(){
 $('#myModal .modal-body').on('click', 'a.controls', function(){
 	var index = $(this).attr('href');
 	console.log("index:"+index);
-	var src = $('#images > :nth-child('+ (index+1) +')').attr('src');             
+	var src = $('#images > :nth-child('+ (index) +')').attr('src');             
 	
 	console.log("before:"+$('#myModal .modal-body img').attr("src"));
 	$('#images > :nth-child('+ (index+1) +')').each(function(){
