@@ -78,6 +78,13 @@ $('#myModal .modal-body').on('click', 'a.controls', function(){
 	var src = $('#images > :nth-child('+ (index+1) +')').attr('src');             
 	
 	console.log("before:"+$('#myModal .modal-body img').attr("src"));
+	$('#images > :nth-child('+ (index+1) +')').each(function(){
+		$.each(this.attributes, function() {
+    if(this.specified) {
+      console.log(this.name, this.value);
+    }
+  });
+	});
 	console.log("sr:"+src);
 	$('#myModal .modal-body img').attr('src', src);
 	console.log("after:"+$('#myModal .modal-body img').attr("src"));
@@ -91,9 +98,9 @@ $('#myModal .modal-body').on('click', 'a.controls', function(){
 		$(this).attr('href', newNextIndex); 
 		$('a.previous').attr('href', newPrevIndex);
 	}
-	var total = $('#images > img').length + 1; 
+	var total = $('#images > img').length; 
 	//hide next button
-	if(total === newNextIndex){
+	if(total+1 === newNextIndex){
 		$('a.next').hide();
 	}else{
 		$('a.next').show();
