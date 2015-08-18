@@ -75,6 +75,7 @@ $(document).ready(function(){
         
          
 $('#myModal .modal-body').on('click', 'a.controls', function(){
+	if($(this).hasClass('previous') ||$(this).hasClass('next')){   
 	var index = $(this).attr('href');
 	console.log("index:"+index);
 	var src = $('#images > :nth-child('+ (index) +')').attr('src');             
@@ -116,5 +117,6 @@ $('#myModal .modal-body').on('click', 'a.controls', function(){
 	}
 	
 	return false;
+}
 });
 </script>
