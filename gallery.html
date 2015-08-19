@@ -8,7 +8,6 @@
         <img class="img-responsive" src="https://scontent.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11822809_977242938994877_3529901364360831296_n.jpg?oh=82a8454819f0cccff4113f8f7772c7af&oe=564A716E" alt="Aventures" style="width:150px;height:auto" >
         <img class="img-responsive" src="https://scontent.xx.fbcdn.net/hphotos-xpt1/t31.0-8/11703575_979589695426868_1583574928485370955_o.jpg" alt="Aventures" style="width:150px;height:auto" >
         <img class="img-responsive" src="https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11885326_10206182160045238_1255539113770201132_n.jpg?oh=188bb035c847da685255603442d96e87&oe=5683AF51" style="width:150px;height:auto">
-        <img class="img-responsive" src="https://scontent-atl1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/s720x720/11885074_817565885023486_1070297332920986903_n.jpg?oh=d466444c2672fdc910eeb91f6fdb9428&oe=5641FE1C" style="width:150px;height:auto">
         <img class="img-responsive" src="https://scontent-atl1-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/11880431_817568705023204_553715846799654330_n.jpg?oh=d54886225bb35ba38990dc5743abc40d&oe=56423136" style="width:150px;height:auto">
 </div>
 <div id="carousel" class="carousel slide" data-ride="carousel" style="float: left; width: 50%;">
@@ -51,26 +50,38 @@ $(document).ready(function(){
 
 	$('#images .img-responsive').on('click',function(){
 		var src = $(this).attr('src');
-		console.log(src);
 		var img = '<img src="' + src + '" class="img-responsive"/>';
-		var index = $(this).index();   
-		console.log("index:"+index);
+		var index = $(this).index('.img-responsive');   
 		var html = '';
 		html += img;                
 		html += '<div style="height:auto;clear:both;display:block;">';
-		html += '<a class="controls next" href="'+ (index +1) + '">next &raquo;</a>';
-		html += '<a class="controls previous" href="' + (index -1) + '">&laquo; prev</a>';
+		html += '<a class="controls next" href="'+ (index +2) + '">next &raquo;</a>';
+		html += '<a class="controls previous" href="' + (index) + '">&laquo; prev</a>';
 		html += '</div>';
-		
+
 		$('#myModal').modal();
 		$('#myModal').on('shown.bs.modal', function(){
 			$('#myModal .modal-body').html(html);
-			//new code
-			$('a.controls').trigger('click');
+			//$('a.controls').trigger('click');
 		})
+
 		$('#myModal').on('hidden.bs.modal', function(){
 			$('#myModal .modal-body').html('');
 		});	
+
+		var total = $('#images > img').length; 
+	//hide next button
+	if(total=== index +1){
+		$('#myModal .modal-body a.next').hide();
+	}else{
+		$('#myModal .modal-body a.next').show();
+	}            
+	//hide previous button
+	if(index === 0){
+		$('#myModal .modal-body a.previous').hide();
+	}else{
+		$('#myModal .modal-body a.previous').show();
+	}
    });	
 })
         
@@ -78,27 +89,15 @@ $(document).ready(function(){
 $('#myModal .modal-body').on('click', 'a.controls', function(){
 	if($(this).hasClass('previous') ||$(this).hasClass('next')){   
 	var index = $(this).attr('href');
-	console.log("index:"+index);
 	var src = $('#images > :nth-child('+ (index) +')').attr('src');             
-	
-	console.log("before:"+$('#myModal .modal-body img').attr("src"));
-	$('#images > :nth-child('+ (index+1) +')').each(function(){
-		$.each(this.attributes, function() {
-    if(this.specified) {
-      console.log(this.name, this.value);
-    }
-  });
-	});
-	console.log("sr:"+src);
 	$('#myModal .modal-body img').attr('src', src);
-	console.log("after:"+$('#myModal .modal-body img').attr("src"));
 	var newPrevIndex = parseInt(index) - 1; 
 	var newNextIndex = parseInt(index) + 1; 
 	
 	if($(this).hasClass('previous')){               
 		$(this).attr('href', newPrevIndex); 
 		$('a.next').attr('href', newNextIndex);
-	}else{
+	}else if ($(this).hasClass('next')){
 		$(this).attr('href', newNextIndex); 
 		$('a.previous').attr('href', newPrevIndex);
 	}
@@ -109,7 +108,6 @@ $('#myModal .modal-body').on('click', 'a.controls', function(){
 	}else{
 		$('a.next').show();
 	}            
-	console.log('newPrevIndex='+newPrevIndex);
 	//hide previous button
 	if(newPrevIndex === -1){
 		$('a.previous').hide();
