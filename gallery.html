@@ -69,23 +69,28 @@ $(document).ready(function(){
 			$('#myModal .modal-body').html('');
 		});	
 
-		var total = $('#images > img').length; 
-	//hide next button
+		function checkVisible(){
+	if($('a.previous').is(':visible')) {
+		alert("here");
+	var total = $('#images > img').length; 
 	if(total=== index +1){
-		$('#myModal .modal-body a.next').hide();
+		$('a.next').hide();
 	}else{
-		$('#myModal .modal-body a.next').show();
+		$('a.next').show();
 	}            
 	//hide previous button
 	if(index === 0){
-		$('#myModal .modal-body a.previous').hide();
+		$('a.previous').hide();
 	}else{
-		$('#myModal .modal-body a.previous').show();
+		$('a.previous').show();
 	}
+	}
+}; 
+		setTimeout(checkVisible, 100);
    });	
 })
         
-         
+       
 $('#myModal .modal-body').on('click', 'a.controls', function(){
 	if($(this).hasClass('previous') ||$(this).hasClass('next')){   
 	var index = $(this).attr('href');
